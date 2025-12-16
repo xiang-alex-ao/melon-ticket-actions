@@ -1,7 +1,14 @@
 name: task
 on:
+  # 1. Existing schedule trigger (runs every 5 minutes)
   schedule:
-    - cron: '*/5 * * * *' # Every 5 minutes
+    - cron: '*/2 * * * *' 
+  
+  # 2. NEW Manual Trigger (Allows running from the GitHub UI)
+  workflow_dispatch: 
+    # Optionally, you can define inputs for the manual run here
+    # Example: You could define an input to override the 'product-id'
+
 jobs:
   job:
     runs-on: ubuntu-latest
